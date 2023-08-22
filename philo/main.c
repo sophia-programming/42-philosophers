@@ -5,10 +5,10 @@ int	print_usage(void)
 	printf(RED"[usage]\n" \
 			  " [1]:number_of_philosophers\n" \
 			  " [2]:time_to_die\n" \
-			  " [3]:time_to_eat_time\n" \
+			  " [3]:time_to_eat\n" \
 			  " [4]:time_to_sleep\n" \
-			  "([5]:number_of_each_philosophers_must_eat)\n"STOP);
-	return (FAILURE);
+			  "([5]:number_of_times_each_philosopher_must_eat)\n"STOP);
+	return (FAILURE); //＊return 1　と同様＊ C言語においては０が成功を意味。
 }
 
 void	mutex_destroy(t_info *info)
