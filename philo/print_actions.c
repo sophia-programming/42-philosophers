@@ -14,6 +14,8 @@ void	everyone_eat_count_check(t_philo *philo)
 	pthread_mutex_unlock(&philo->info->shared_mutex);
 }
 
+//lockを取得したスレッドだけがprint操作を行えるように制御。
+//mutexは一度に一つのスレッドしかロックできない性質を持っている
 void	print_action(t_action action, t_philo *philo)
 {
 	size_t	print_time;

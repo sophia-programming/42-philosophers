@@ -39,11 +39,11 @@ void	init_philo(t_info *info)
 	i = 0;
 	while (i < info->nb_philo)
 	{
-		info->philo[i].index = i + 1;
+		info->philo[i].index = i + 1; //通常通り数えた時と同じindexにするため
 		info->philo[i].info = info;
-		info->philo[i].right_hand = info->philo[i].index - 1;
+		info->philo[i].right_hand = info->philo[i].index - 1;//philosopherのindexに合わせるため
 		if (info->philo[i].index != info->nb_philo)
-			info->philo[i].left_hand = info->philo[i].index;
+			info->philo[i].left_hand = info->philo[i].index;//左隣にいるフィロソファーの番号を示すためであり、そのままの値を使用する方が適切
 		else
 			info->philo[i].left_hand = 0;
 		info->philo[i].eat_count = 0;
