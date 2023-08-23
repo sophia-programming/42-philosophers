@@ -1,5 +1,6 @@
 #include "philosophers.h"
 
+//各哲学者の食事回数と全体の食事回数を監視し、必要な回数食事をおえたかどうか判断する関数
 void	everyone_eat_count_check(t_philo *philo)
 {
 	pthread_mutex_lock(&philo->info->shared_mutex);
@@ -10,6 +11,7 @@ void	everyone_eat_count_check(t_philo *philo)
 		philo->info->total_eat_time++;
 		if (philo->info->total_eat_time == philo->info->nb_philo)
 			philo->info->is_alive = false;
+		//全員が必要な回数食事を終えたのでプログラム停止
 	}
 	pthread_mutex_unlock(&philo->info->shared_mutex);
 }

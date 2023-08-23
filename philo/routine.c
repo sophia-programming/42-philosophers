@@ -35,7 +35,7 @@ void	*philo_routine(void *philosopher)
 	philo = philosopher;
 	philo->last_eat_time = get_time();
 	monitoring(philo);
-	slow_down_even(philo);
+	slow_down_even(philo);//デッドロック回避
 	while (1)
 	{
 		pthread_mutex_lock(&philo->info->shared_mutex);
