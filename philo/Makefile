@@ -24,10 +24,10 @@ $(NAME): $(objs)
 	cc $(CFLAGS) $(objs) -o $(NAME)
 	
 clean:
-	${RM} $(objs)
+	$(RM) $(objs)
 	
 fclean: clean
-	${RM} $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 

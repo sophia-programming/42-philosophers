@@ -1,5 +1,5 @@
 NAME	=	philo
-SRCS	=	./dinig.c\
+SRCS	=	./dingin_aciton.c
 		init.c\
 		main.c\ ....etc
 　
@@ -17,12 +17,12 @@ CFLAGS	=	-Wall -Werror -Wextra -pthread $(thread_flag)
 
        			//-pthread フラグを使用することで、コンパイラはスレッド関連の関数や型を適切に解釈し、リンク時に			必要なライブラリをリンク。また、スレッドのセーフティに関連する警告やエラーメッセージを表示するためにも使用されます。
 
-OBJS	=	$(srcs:.c=.o)
+OBJS	=	$(SRCS:.c=.o)
 
-all: $(NAME)
+all:	$(NAME)
 
-$(NAME): $(OBJS)
-	cc $(CFLAGS) $(OBJS) -o $(NAME) 
+$(NAME):$(OBJS)
+	cc $(CFLAGS) $(OBJS) -o $(NAME)
 			// -o $(NAME)の箇所「-oで実行可能ファイルの名前を決めている」
 
 clean :
