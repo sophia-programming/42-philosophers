@@ -10,6 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ * /dining_action
+ * １　forksをとる
+ * ２　eating
+ * ３　sleeping
+ * ４　thingking の流れを記載
+ *data_raceを起こしやすい箇所はミューテックスを使用して対応
+*/
 #include "philosophers.h"
 
 void	taking_fork(t_philo *philo)

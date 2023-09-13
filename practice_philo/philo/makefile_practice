@@ -1,0 +1,37 @@
+NAME	=	philo
+SRCS	=	./dingin_aciton.c
+		init.c\
+		main.c\ ....etc
+　
+thread_flag	=	-g3 -fsanitize=thread　// スレッド関連の競合状態（race condition）やデッドロックなどの
+					      //問題を検出し、デバックするためのもの
+
+====================================================
+-fsanitize オプションには、address、undefined、leak など、異なる種類のサニタイズ機能があります。
+これらのオプションを使用すると、メモリリーク、未定義の動作、アドレスの不整合など、
+さまざまな問題を検出することができます。
+=======================================================
+
+
+CFLAGS	=	-Wall -Werror -Wextra -pthread $(thread_flag)
+
+       			//-pthread フラグを使用することで、コンパイラはスレッド関連の関数や型を適切に解釈し、リンク時に			必要なライブラリをリンク。また、スレッドのセーフティに関連する警告やエラーメッセージを表示するためにも使用されます。
+
+OBJS	=	$(SRCS:.c=.o)
+
+all:	$(NAME)
+
+$(NAME):$(OBJS)
+	cc $(CFLAGS) $(OBJS) -o $(NAME)
+			// -o $(NAME)の箇所「-oで実行可能ファイルの名前を決めている」
+
+clean :
+	$(RM) $(OBJS)
+
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
+
+./PHONY: all clean fclean re
+	

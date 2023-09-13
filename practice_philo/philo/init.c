@@ -49,20 +49,20 @@ void	init_philo(t_info *info)
 	size_t	i;
 
 	i = 0;
-	while (i < info->nb_philo)
+	while (i < info->nb_philo)//最初のwhile分ではphilo自体の初期化。
 	{
-		info->philo[i].index = i + 1; //通常通り数えた時と同じindexにするため
+		info->philo[i].index = i + 1; //philoのindexを「一人目」として数えたいから
 		info->philo[i].info = info;
-		info->philo[i].right_hand = info->philo[i].index - 1;//philosopherのindexに合わせるため
+		info->philo[i].right_hand = info->philo[i].index - 1;//図に書けばわかりやすい。右手は隣の人のindexの−１！
 		if (info->philo[i].index != info->nb_philo)
-			info->philo[i].left_hand = info->philo[i].index;//左隣にいるフィロソファーの番号を示すためであり、そのままの値を使用する方が適切
+			info->philo[i].left_hand = info->philo[i].index;//左手はphilo自身のindexと同じ
 		else
-			info->philo[i].left_hand = 0;
+			info->philo[i].left_hand = 0;//最後のひとは一番最初の0のforkに戻るため0!
 		info->philo[i].eat_count = 0;
 		info->philo[i].last_eat_time = 0;
 		i++;
 	}
-	info->total_eat_time = 0;
+	info->total_eat_time = 0;//ここ2つでプログラム全体の初期化をしている。詳しくはnotion。
 	info->is_alive = true;
 }
 

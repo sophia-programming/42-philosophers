@@ -34,7 +34,6 @@ void	mutex_destroy(t_info *info)
 	pthread_mutex_destroy(&info->print_mutex);
 }
 
-
 int	main(int argc, char **argv)
 {
 	t_info	info;
