@@ -12,7 +12,7 @@
 
 #include "philosophers.h"
 
-int	init_args(t_info *info, int argc, char **argv)
+int init_args(t_info *info, int argc, char **argv)
 {
 	if (strs_is_digit(argv) == FAILURE || check_arg_size(argv) == FAILURE)
 		return (FAILURE);

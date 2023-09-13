@@ -47,3 +47,4 @@ int	main(int argc, char **argv)
 	launch_threads(&info);
 	mutex_destroy(&info);
 }
+
