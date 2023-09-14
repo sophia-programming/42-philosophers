@@ -26,3 +26,4 @@ int	only_one_philosopher(t_info *info)
 		    */
 	return (SUCCESS);
 }
+
