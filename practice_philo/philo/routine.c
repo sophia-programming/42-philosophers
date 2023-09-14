@@ -59,4 +59,4 @@ void	*philo_routine(void *philosopher)
 	}
 	pthread_mutex_unlock(&philo->info->shared_mutex);
 	return (NULL);
-}
+

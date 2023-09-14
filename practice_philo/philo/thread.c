@@ -26,5 +26,5 @@ void	launch_threads(t_info *info)
 	}
 	i = 0;
 	while (i < info->nb_philo)
-		pthread_join(info->philo[i++].thread, NULL);
+		pthread_join(info->philo[i++].thread, NULL);//thread終了
 }

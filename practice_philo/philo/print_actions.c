@@ -34,6 +34,7 @@ void	everyone_eat_count_check(t_philo *philo)
  * 哲学者が食事をするたびに呼び出され、全哲学者が指定された回数だけ食事をしたかどうかを確認しています。
  * 全哲学者が条件を満たした場合、プログラムは終了
  */
+
 void	print_action(t_action action, t_philo *philo)
 {
 	size_t	print_time;
