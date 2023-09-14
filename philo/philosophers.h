@@ -32,7 +32,7 @@ typedef enum e_action
 
 typedef struct s_info	t_info;
 
-typedef struct s_philo//philosopher個々の情報
+typedef struct s_philo
 {
 	ssize_t		eat_count;
 	t_info		*info;
@@ -43,7 +43,7 @@ typedef struct s_philo//philosopher個々の情報
 	pthread_t	thread;
 }	t_philo;
 
-typedef struct s_info//プログラム全体の情報
+typedef struct s_info
 {
 	size_t			nb_philo;
 	size_t			die_time;

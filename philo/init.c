@@ -36,14 +36,6 @@ int	init_args(t_info *info, int argc, char **argv)
 	return (SUCCESS);
 }
 
-/*
- * {0} 初期化が有効なケースは、特にデフォルトの初期値やゼロクリアが
- * 必要な場面で使われることが多いですが、各メンバーに個別の初期値や計算を適用する場合には、
- * 個々の初期化コードを記述する必要があります。
- *
- * ということで下記のコードでこの{0}を使って初期化はできなさそうだ。
- *
- */
 void	init_philo(t_info *info)
 {
 	size_t	i;
@@ -51,11 +43,11 @@ void	init_philo(t_info *info)
 	i = 0;
 	while (i < info->nb_philo)
 	{
-		info->philo[i].index = i + 1; //通常通り数えた時と同じindexにするため
+		info->philo[i].index = i + 1;
 		info->philo[i].info = info;
-		info->philo[i].right_hand = info->philo[i].index - 1;//philosopherのindexに合わせるため
+		info->philo[i].right_hand = info->philo[i].index - 1;
 		if (info->philo[i].index != info->nb_philo)
-			info->philo[i].left_hand = info->philo[i].index;//左隣にいるフィロソファーの番号を示すためであり、そのままの値を使用する方が適切
+			info->philo[i].left_hand = info->philo[i].index;
 		else
 			info->philo[i].left_hand = 0;
 		info->philo[i].eat_count = 0;

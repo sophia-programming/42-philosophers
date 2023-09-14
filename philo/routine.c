@@ -14,9 +14,8 @@
 
 void	slow_down_even(t_philo *philo)
 {
-	if (philo->index % 2 == 0)//philosopherのindexが偶数の場合
+	if (philo->index % 2 == 0)
 		usleep(1000);
-	//usleepすることで奇数番目のphilosopherが先にforksを取れる
 }
 
 void	start_philosophers(t_philo *philo)
@@ -35,12 +34,6 @@ void	monitoring(t_philo *philo)
 	pthread_detach(monitor_thread);
 }
 
-/*
- * pthread_create関数の第３引数は戻り値と引数それぞれが
- * void *である必要がある.第3引数は新しいスレッドで実行する関数。
- * ↓
- */
-
 void	*philo_routine(void *philosopher)
 {
 	t_philo	*philo;
@@ -48,7 +41,7 @@ void	*philo_routine(void *philosopher)
 	philo = philosopher;
 	philo->last_eat_time = get_time();
 	monitoring(philo);
-	slow_down_even(philo);//デッドロック回避
+	slow_down_even(philo);
 	while (1)
 	{
 		pthread_mutex_lock(&philo->info->shared_mutex);

@@ -22,7 +22,6 @@ void	*monitor(void *philosopher)
 		pthread_mutex_lock(&philo->info->shared_mutex);
 		if (philo->info->is_alive == false)
 			break ;
-		//最後の食事からの経過時間が死亡時間を超えているかチェック
 		if (philo->info->die_time <= get_time() - philo->last_eat_time)
 		{
 			print_action(DIE, philo);
