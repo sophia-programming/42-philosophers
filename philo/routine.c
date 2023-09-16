@@ -42,7 +42,7 @@ void	*philo_routine(void *philosopher)
 	philo->last_eat_time = get_time();
 	monitoring(philo);
 	slow_down_even(philo);
-	while (1)
+	while (true)
 	{
 		pthread_mutex_lock(&philo->info->shared_mutex);
 		if (philo->info->is_alive == false)

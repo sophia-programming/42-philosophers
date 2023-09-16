@@ -17,7 +17,7 @@ void	*monitor(void *philosopher)
 	t_philo	*philo;
 
 	philo = philosopher;
-	while (1)
+	while (true)
 	{
 		pthread_mutex_lock(&philo->info->shared_mutex);
 		if (philo->info->is_alive == false)

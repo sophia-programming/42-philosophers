@@ -64,7 +64,10 @@ void	init_mutex(t_info *info)
 
 	i = 0;
 	while (i < info->nb_philo)
-		pthread_mutex_init(&info->forks[i++], NULL);
+	{
+		pthread_mutex_init(&info->forks[i], NULL);
+		i++;
+	}
 	pthread_mutex_init(&info->shared_mutex, NULL);
 	pthread_mutex_init(&info->print_mutex, NULL);
 }

@@ -29,7 +29,10 @@ void	mutex_destroy(t_info *info)
 
 	i = 0;
 	while (i < info->nb_philo)
-		pthread_mutex_destroy(&info->forks[i++]);
+	{
+		pthread_mutex_destroy(&info->forks[i]);
+		i++;
+	}
 	pthread_mutex_destroy(&info->shared_mutex);
 	pthread_mutex_destroy(&info->print_mutex);
 }
