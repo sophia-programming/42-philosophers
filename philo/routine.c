@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#include "header/philosophers.h"
 
 void	slow_down_even(t_philo *philo)
 {

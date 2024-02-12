@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#include "header/philosophers.h"
 
 int	str_is_digit(char *str)
 {

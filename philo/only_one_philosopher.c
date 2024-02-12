@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#include "header/philosophers.h"
 
 int	only_one_philosopher(t_info *info)
 {
