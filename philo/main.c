@@ -14,12 +14,12 @@
 
 int	print_usage(void)
 {
-	printf(RED"[usage]\n" \
+	error_print("[usage]\n" \
 				" [1]:number_of_philosophers\n" \
 				" [2]:time_to_die\n" \
 				" [3]:time_to_eat\n" \
 				" [4]:time_to_sleep\n" \
-				"([5]:number_of_times_each_philosopher_must_eat)\n"STOP);
+				"([5]:number_of_times_each_philosopher_must_eat)");
 	return (FAILURE);
 }
 
