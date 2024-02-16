@@ -75,4 +75,5 @@ int			only_one_philosopher(t_info *info);
 int64_t		ft_atoll(char *str);
 int			check_arg_size(char **argv);
 int			strs_is_digit(char **strs);
+void		error_print(char *str);
 #endif

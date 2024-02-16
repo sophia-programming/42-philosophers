@@ -35,7 +35,7 @@ int	strs_is_digit(char **strs)
 	{
 		if (str_is_digit(strs[i]) == FAILURE)
 		{
-			printf(RED"argv includes invalid character!\n"STOP);
+			error_print("argv includes invalid character!");
 			return (FAILURE);
 		}
 		i++;
@@ -50,12 +50,16 @@ int	check_arg_size(char **argv)
 	|| ft_atoll(argv[3]) <= 0 || INT_MAX < ft_atoll(argv[3]) \
 	|| ft_atoll(argv[4]) <= 0 || INT_MAX < ft_atoll(argv[4]))
 	{
-		printf(RED"0 < argv[1] && argv[1] <= INT_MAX\n" \
+		error_print("0 < argv[1] && argv[1] <= INT_MAX\n" \
 		"0 < argv[2] && argv[2] <= INT_MAX\n" \
 		"0 < argv[3] && argv[3] <= INT_MAX\n" \
-		"0 < argv[4] && argv[4] <= INT_MAX\n" \
-		"0 < argv[5] && argv[5] <= INT_MAX\n"STOP);
+		"0 < argv[4] && argv[4] <= INT_MAX\n");
 		return (FAILURE);
 	}
 	return (SUCCESS);
+}
+
+void	error_print(char *str)
+{
+	printf(RED"%s\n"STOP, str);
 }
