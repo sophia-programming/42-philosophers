@@ -20,13 +20,14 @@ srcs = ./dining_actions.c \
 		 print_actions.c \
 		 routine.c \
 		 thread.c \
-		 time.c \
-		 utils.c \
-		 error_handling.c
+		 ../utils/time.c \
+		 ../utils/utils.c \
+		 ../utils/error_handling.c
 
-thread_flag = -g3 -fsanitize=thread
+#thread_flag = -g3 -fsanitize=thread
 
-CFLAGS = -Wall -Werror -Wextra -pthread $(thread_flag)
+#CFLAGS = -Wall -Werror -Wextra -pthread $(thread_flag)
+CFLAGS = -Wall -Werror -Wextra -pthread
 
 objs = $(srcs:.c=.o)
 
@@ -40,6 +41,7 @@ clean:
 	
 fclean: clean
 	$(RM) $(NAME)
+
 
 re: fclean all
 

@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   only_one_philosopher.c                             :+:      :+:    :+:   */
+/*   time.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oaoba <oaoba@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 14:03:36 by oaoba             #+#    #+#             */
-/*   Updated: 2023/09/12 14:03:39 by oaoba            ###   ########.fr       */
+/*   Created: 2023/09/12 14:04:04 by oaoba             #+#    #+#             */
+/*   Updated: 2023/09/12 14:04:08 by oaoba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#include "../header/philosophers.h"
 
-int	only_one_philosopher(t_info *info)
+size_t	get_time(void)
 {
-	info->start_time = get_time();
-	printf(GREEN"0 %zu has taken a fork\n"STOP, info->philo->index);
-	precise_sleep(info->die_time);
-	printf(RED"%zu %zu died\n"STOP, \
-	get_time() - info->start_time, info->philo->index);
-	return (SUCCESS);
+	struct timeval	tp;
+	size_t			ms;
+
+	gettimeofday(&tp, NULL);
+	ms = tp.tv_sec * 1000 + tp.tv_usec / 1000;
+	return (ms);
+}
+
+void	precise_sleep(size_t sleep_time)
+{
+	size_t	end_time;
+
+	end_time = get_time() + sleep_time;
+	while (get_time() < end_time)
+		usleep(100);
 }
