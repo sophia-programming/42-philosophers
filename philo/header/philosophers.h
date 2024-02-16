@@ -30,6 +30,16 @@ typedef enum e_action
 	DIE,
 }	t_action;
 
+typedef enum e_color
+{
+	STOP,
+	BOLD,
+	RED,
+	GREEN,
+	BLUE,
+	CYAN,
+}	t_color;
+
 typedef struct s_info	t_info;
 
 typedef struct s_philo
@@ -84,4 +94,7 @@ int64_t		ft_atoll(char *str);
 int			check_arg_size(char **argv);
 int			strs_is_digit(char **strs);
 void		error_print(char *str);
+const char	*get_color(t_color color);
+void		print_philo_action(size_t print_time, size_t philo_index,
+						   const char *color, const char *action);
 #endif

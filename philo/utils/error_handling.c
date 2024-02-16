@@ -61,5 +61,5 @@ int	check_arg_size(char **argv)
 
 void	error_print(char *str)
 {
-	printf(RED"%s\n"STOP, str);
+	print_philo_action(0, 0, get_color(RED), str);
 }

@@ -52,6 +52,24 @@ int	parse_args(int argc, char **argv, t_params *params)
 	return (SUCCESS);
 }
 
+const char	*get_color(t_color color)
+{
+	if (color == STOP)
+		return ("\e[0m");
+	else if (color == BOLD)
+		return ("\e[1m");
+	else if (color == RED)
+		return ("\e[31m");
+	else if (color == GREEN)
+		return ("\e[32m");
+	else if (color == BLUE)
+		return ("\e[34m");
+	else if (color == CYAN)
+		return ("\e[36m");
+	else
+		return ("\e[0m");
+}
+
 int	main(int argc, char **argv)
 {
 	t_info		info;
