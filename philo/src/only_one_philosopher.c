@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   thread.c                                           :+:      :+:    :+:   */
+/*   only_one_philosopher.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oaoba <oaoba@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 14:04:00 by oaoba             #+#    #+#             */
-/*   Updated: 2023/09/12 14:04:02 by oaoba            ###   ########.fr       */
+/*   Created: 2023/09/12 14:03:36 by oaoba             #+#    #+#             */
+/*   Updated: 2023/09/12 14:03:39 by oaoba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/philosophers.h"
+#include "../header/philosophers.h"
 
-void	launch_threads(t_info *info)
+int	only_one_philosopher(t_info *info)
 {
-	size_t	i;
-
-	i = 0;
 	info->start_time = get_time();
-	while (i < info->nb_philo)
-	{
-		pthread_create(&info->philo[i].thread, NULL, \
-		philo_routine, &info->philo[i]);
-		i++;
-	}
-	i = 0;
-	while (i < info->nb_philo)
-	{
-		pthread_join(info->philo[i].thread, NULL);
-		i++;
-	}
+	printf(GREEN"0 %zu has taken a fork\n"STOP, info->philo->index);
+	precise_sleep(info->die_time);
+	printf(RED"%zu %zu died\n"STOP, \
+	get_time() - info->start_time, info->philo->index);
+	return (SUCCESS);
 }

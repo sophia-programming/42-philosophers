@@ -20,9 +20,9 @@ srcs = ./dining_actions.c \
 		 print_actions.c \
 		 routine.c \
 		 thread.c \
-		 ./utils/time.c \
-		 ./utils/utils.c \
-		 ./utils/error_handling.c
+		 ../utils/time.c \
+		 ../utils/utils.c \
+		 ../utils/error_handling.c
 
 #thread_flag = -g3 -fsanitize=thread
 

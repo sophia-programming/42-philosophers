@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/philosophers.h"
+#include "../header/philosophers.h"
 
 void	everyone_eat_count_check(t_philo *philo)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/philosophers.h"
+#include "../header/philosophers.h"
 
 int	print_usage(void)
 {

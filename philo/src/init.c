@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/philosophers.h"
+#include "../header/philosophers.h"
 
 int	init_args(t_info *info, int argc, char **argv)
 {

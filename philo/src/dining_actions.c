@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/philosophers.h"
+#include "../header/philosophers.h"
 
 void	taking_fork(t_philo *philo)
 {
