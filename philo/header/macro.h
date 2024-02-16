@@ -16,11 +16,5 @@
 # define MAX_NB_PHILO 200
 # define SUCCESS 0
 # define FAILURE 1
-# define STOP             "\e[0m"
-# define BOLD            "\e[1m"
-# define RED             "\e[31m"
-# define GREEN           "\e[32m"
-# define BLUE            "\e[34m"
-# define CYAN            "\e[36m"
 # define UNUSED (-1)
 #endif
