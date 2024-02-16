@@ -59,6 +59,14 @@ typedef struct s_info
 	t_philo			philo[MAX_NB_PHILO];
 }	t_info;
 
+typedef struct s_params {
+	int	num_philosophers;
+	int	time_to_die;
+	int	time_to_eat;
+	int	time_to_sleep;
+	int	num_of_times_each_philosopher_must_eat;
+}	t_params;
+
 int			init_info(t_info *info, int argc, char **argv);
 void		debug_info(t_info *info);
 void		launch_threads(t_info *info);
@@ -75,4 +83,5 @@ int			only_one_philosopher(t_info *info);
 int64_t		ft_atoll(char *str);
 int			check_arg_size(char **argv);
 int			strs_is_digit(char **strs);
+void		error_print(char *str);
 #endif

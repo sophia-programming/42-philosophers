@@ -18,7 +18,7 @@ int	init_args(t_info *info, int argc, char **argv)
 		return (FAILURE);
 	if (200 <= ft_atoll(argv[1]))
 	{
-		printf(RED"number_of_philosophers should be under 200.\n"STOP);
+		error_print("number_of_philosophers should be under 200.");
 		return (FAILURE);
 	}
 	info->nb_philo = ft_atoll(argv[1]);
