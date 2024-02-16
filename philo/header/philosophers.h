@@ -96,5 +96,5 @@ int			strs_is_digit(char **strs);
 void		error_print(char *str);
 const char	*get_color(t_color color);
 void		print_philo_action(size_t print_time, size_t philo_index,
-						   const char *color, const char *action);
+				const char *color, const char *action);
 #endif
